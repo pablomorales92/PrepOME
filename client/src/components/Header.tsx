@@ -23,10 +23,10 @@ const Header: React.FC = () => {
 
   // Define navigation links
   const navLinks = [
-    { text: '¿Qué es?', href: '#' },
-    { text: 'Calendario', href: '#' },
-    { text: 'Material', href: '#' },
-    { text: 'Enlaces', href: '#' },
+    { text: '¿Qué es?', href: '/que-es' },
+    { text: 'Calendario', href: '/calendario' },
+    { text: 'Material', href: '/material' },
+    { text: 'Enlaces', href: '/enlaces' },
     { text: 'Contacto', href: '#footer' },
   ];
 
