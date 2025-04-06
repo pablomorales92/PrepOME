@@ -12,7 +12,33 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
+// Reemplazamos el enrutamiento estándar por uno basado en hash
+// para mejor compatibilidad con GitHub Pages
+const useHashLocation = () => {
+  const [loc, setLoc] = useState(window.location.hash.replace("#", "") || "/");
+  
+  useEffect(() => {
+    const handler = () => {
+      const hash = window.location.hash.replace("#", "") || "/";
+      setLoc(hash);
+    };
+    
+    window.addEventListener("hashchange", handler);
+    return () => window.removeEventListener("hashchange", handler);
+  }, []);
+  
+  const navigate = (to: string) => {
+    window.location.hash = to;
+  };
+  
+  return [loc, navigate];
+};
+
 function Router() {
+  // Usamos el hook personalizado para la navegación basada en hash
+  // @ts-ignore - Ignoramos errores de tipado ya que el formato es compatible con wouter
+  useLocation.use = useHashLocation;
+  
   return (
     <Switch>
       <Route path="/" component={Home} />

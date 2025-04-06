@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'wouter';
 
-// Componente para manejar enlaces internos utilizando el hash
+// Definimos la interfaz para nuestro componente HashLink
 interface HashLinkProps {
   to: string;
   children: React.ReactNode;
@@ -9,46 +9,25 @@ interface HashLinkProps {
   onClick?: () => void;
 }
 
-const HashLink: React.FC<HashLinkProps> = ({ to, children, className = '', onClick }) => {
-  const [location, setLocation] = useLocation();
+// Componente para gestionar la navegación basada en hash compatible con GitHub Pages
+const HashLink = ({ to, children, className, onClick }: HashLinkProps) => {
+  const [_, navigate] = useLocation();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     
-    // Si es un enlace interno (no comienza con http o https), actualiza el hash
-    if (!to.startsWith('http')) {
-      // Si es un enlace de ancla (comienza con # y no es una ruta), mantener el formato
-      if (to.startsWith('#') && !to.startsWith('#/')) {
-        // Es un ancla dentro de la página (ej: #footer)
-        window.location.hash = to;
-      } else {
-        // Si es un enlace de ruta
-        if (to === "/") {
-          // Si es la página principal
-          window.location.hash = "";
-          setLocation("/");
-        } else if (to.startsWith('/')) {
-          // Si es una ruta interna, añadir # al inicio
-          window.location.hash = to;
-          setLocation(to);
-        } else {
-          // Otros casos (por ejemplo, rutas relativas)
-          window.location.hash = `/${to}`;
-          setLocation(`/${to}`);
-        }
-      }
-    } else {
-      // Si es un enlace externo, comportamiento normal
-      window.open(to, '_blank', 'noopener,noreferrer');
+    // Si hay un manejador de eventos adicional, lo ejecutamos
+    if (onClick) {
+      onClick();
     }
     
-    // Ejecutar el onClick adicional si existe
-    if (onClick) onClick();
+    // Navegamos a la ruta utilizando el hash
+    navigate(to);
   };
-  
+
   return (
     <a 
-      href={to.startsWith('http') ? to : `#${to.startsWith('/') ? to : `/${to}`}`}
+      href={`#${to}`} 
       className={className}
       onClick={handleClick}
     >

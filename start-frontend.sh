@@ -1,4 +1,3 @@
 #!/bin/bash
-
-# Ejecutar la aplicación frontend usando vite directamente
-npx vite --config vite.frontend.config.ts
+# Script para iniciar el servidor frontend
+node frontend-server.js
