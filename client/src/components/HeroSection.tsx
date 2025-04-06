@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import HashLink from './HashLink';
 
 const HeroSection: React.FC = () => {
   return (
@@ -12,13 +13,13 @@ const HeroSection: React.FC = () => {
       <div className="text-center text-white px-4 md:px-0">
         <h1 className="font-heading font-bold text-3xl md:text-5xl mb-2 md:mb-4">¡Participa en la Olimpiada de Matemáticas 2025!</h1>
         <p className="text-lg md:text-xl mb-6">Desafíos, diversión y premios esperan.</p>
-        <a href="#subscription">
+        <HashLink to="#subscription">
           <Button 
             className="bg-[#f57c00] hover:bg-[#ffad42] text-white font-bold py-3 px-6 rounded-lg shadow-lg"
           >
             Inscríbete ahora
           </Button>
-        </a>
+        </HashLink>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
+import HashLink from './HashLink';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,13 +21,13 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [mobileMenuOpen]);
 
-  // Define navigation links
+  // Define navigation links - usando el formato adecuado para el enrutamiento basado en hash
   const navLinks = [
     { text: '¿Qué es?', href: '/que-es' },
     { text: 'Calendario', href: '/calendario' },
     { text: 'Material', href: '/material' },
     { text: 'Enlaces', href: '/enlaces' },
-    { text: 'Contacto', href: '#footer' },
+    { text: 'Contacto', href: '#footer' }, // Esto es un enlace de ancla, por lo que se mantiene como #
   ];
 
   return (
@@ -35,24 +35,24 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <HashLink to="/" className="flex items-center">
             <img 
               src="https://www.rsme.es/wp-content/uploads/2019/01/logoOMEgrande-276x300.jpg" 
               alt="Olimpiada Matemática Española" 
               className="h-14"
             />
-          </Link>
+          </HashLink>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
             {navLinks.map((link, index) => (
-              <a 
+              <HashLink 
                 key={index}
-                href={link.href}
+                to={link.href}
                 className="font-heading font-medium text-neutral-dark hover:text-primary transition-colors duration-200"
               >
                 {link.text}
-              </a>
+              </HashLink>
             ))}
           </nav>
           
@@ -70,14 +70,14 @@ const Header: React.FC = () => {
         <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} pt-2 pb-4`}>
           <div className="flex flex-col space-y-3">
             {navLinks.map((link, index) => (
-              <a 
+              <HashLink 
                 key={index}
-                href={link.href}
+                to={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className="font-heading font-medium py-2 text-neutral-dark hover:text-primary transition-colors duration-200"
               >
                 {link.text}
-              </a>
+              </HashLink>
             ))}
           </div>
         </div>

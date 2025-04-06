@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import SubscriptionBanner from '../components/SubscriptionBanner';
+import HashLink from '@/components/HashLink';
 
 const Home: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">¿Qué es la Olimpiada Matemática?</h2>
               <p className="text-muted-foreground mb-4">La Olimpiada Matemática Española (OME) es un concurso de resolución de problemas matemáticos dirigido a estudiantes de Bachillerato con especial talento e interés por las matemáticas.</p>
               <p className="text-muted-foreground">El objetivo principal es estimular el estudio de las matemáticas y el desarrollo de jóvenes talentos en esta disciplina.</p>
-              <a href="/que-es" className="inline-block mt-4 text-primary font-semibold hover:underline">Leer más <i className="fas fa-arrow-right ml-1"></i></a>
+              <HashLink to="/que-es" className="inline-block mt-4 text-primary font-semibold hover:underline">Leer más →</HashLink>
             </div>
             <div>
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">Beneficios de participar</h2>
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
                 <li>Premios y becas para los mejores clasificados</li>
                 <li>Contacto con otros estudiantes apasionados por las matemáticas</li>
               </ul>
-              <a href="/que-es" className="inline-block mt-4 text-primary font-semibold hover:underline">Ver todos los beneficios <i className="fas fa-arrow-right ml-1"></i></a>
+              <HashLink to="/que-es" className="inline-block mt-4 text-primary font-semibold hover:underline">Ver todos los beneficios →</HashLink>
             </div>
           </div>
         </div>
@@ -46,7 +47,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Local</h3>
                 <p className="text-muted-foreground">Primera fase de la olimpiada en tu centro educativo.</p>
-                <a href="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</a>
+                <HashLink to="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
               </div>
             </div>
             
@@ -57,7 +58,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Autonómica</h3>
                 <p className="text-muted-foreground">Clasificados compiten a nivel de comunidad autónoma.</p>
-                <a href="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</a>
+                <HashLink to="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
               </div>
             </div>
             
@@ -68,15 +69,15 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Nacional</h3>
                 <p className="text-muted-foreground">Final nacional con los mejores clasificados del país.</p>
-                <a href="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</a>
+                <HashLink to="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
               </div>
             </div>
           </div>
           
           <div className="text-center mt-10">
-            <a href="/calendario" className="bg-primary hover:bg-primary/80 text-primary-foreground font-bold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md">
+            <HashLink to="/calendario" className="bg-primary hover:bg-primary/80 text-primary-foreground font-bold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md">
               Ver calendario completo
-            </a>
+            </HashLink>
           </div>
         </div>
       </section>
