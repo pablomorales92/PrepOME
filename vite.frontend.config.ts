@@ -29,7 +29,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
-  base: "./aa/", // Importante para GitHub Pages
+  base: "./", // Importante para GitHub Pages
   server: {
     port: 4000, // Mantener mismo puerto para compatibilidad
     host: true, // Permitir acceso desde todas las redes
