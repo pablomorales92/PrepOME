@@ -31,7 +31,7 @@ export default defineConfig({
   },
   base: "./", // Importante para GitHub Pages
   server: {
-    port: 5000, // Mantener mismo puerto para compatibilidad
+    port: 4000, // Mantener mismo puerto para compatibilidad
     host: true, // Permitir acceso desde todas las redes
     strictPort: true,
     hmr: {

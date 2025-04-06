@@ -12,7 +12,7 @@ async function startServer() {
       configFile: false, // No usar archivo de configuración externo
       root: path.resolve(__dirname, 'client'),
       server: {
-        port: 5000,
+        port: 4000,
         host: '0.0.0.0',
       },
       resolve: {

@@ -46,17 +46,27 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
             {navLinks.map((link, index) => (
-              <HashLink 
-                key={index}
-                to={link.href}
-                className="font-heading font-medium text-neutral-dark hover:text-primary transition-colors duration-200"
-              >
-                {link.text}
-              </HashLink>
+              link.href === '#footer' ? (
+                <a
+                  key={index}
+                  href={link.href}
+                  className="font-heading font-medium text-neutral-dark hover:text-primary transition-colors duration-200"
+                >
+                  {link.text}
+                </a>
+              ) : (
+                <HashLink
+                  key={index}
+                  to={link.href}
+                  className="font-heading font-medium text-neutral-dark hover:text-primary transition-colors duration-200"
+                >
+                  {link.text}
+                </HashLink>
+              )
             ))}
           </nav>
-          
-          {/* Mobile menu button */}
+
+          {/* Mobile Menu Button */}
           <button 
             onClick={toggleMobileMenu}
             className="md:hidden text-neutral-dark focus:outline-none"
@@ -65,19 +75,30 @@ const Header: React.FC = () => {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        
+
         {/* Mobile Navigation */}
         <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} pt-2 pb-4`}>
           <div className="flex flex-col space-y-3">
             {navLinks.map((link, index) => (
-              <HashLink 
-                key={index}
-                to={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-heading font-medium py-2 text-neutral-dark hover:text-primary transition-colors duration-200"
-              >
-                {link.text}
-              </HashLink>
+              link.href === '#footer' ? (
+                <a
+                  key={index}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-heading font-medium py-2 text-neutral-dark hover:text-primary transition-colors duration-200"
+                >
+                  {link.text}
+                </a>
+              ) : (
+                <HashLink
+                  key={index}
+                  to={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-heading font-medium py-2 text-neutral-dark hover:text-primary transition-colors duration-200"
+                >
+                  {link.text}
+                </HashLink>
+              )
             ))}
           </div>
         </div>

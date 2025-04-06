@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-primary text-primary-foreground pt-12 pb-6">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <h3 className="font-heading font-bold text-xl mb-4">Olimpiada Matemática</h3>
             <p className="text-primary-foreground/90 mb-4">Promoviendo el talento matemático en estudiantes de toda España desde hace más de 50 años.</p>
@@ -21,16 +21,6 @@ const Footer: React.FC = () => {
                 <FaTiktok size={24} />
               </a>
             </div>
-          </div>
-          
-          <div>
-            <h3 className="font-heading font-bold text-xl mb-4">Enlaces rápidos</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200">¿Qué es?</a></li>
-              <li><a href="#" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200">Calendario</a></li>
-              <li><a href="#" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200">Material</a></li>
-              <li><a href="#" className="text-primary-foreground/90 hover:text-[#f57c00] transition-colors duration-200">Enlaces</a></li>
-            </ul>
           </div>
           
           <div>
