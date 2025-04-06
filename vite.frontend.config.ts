@@ -21,7 +21,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
@@ -32,6 +31,19 @@ export default defineConfig({
   },
   base: "./", // Importante para GitHub Pages
   server: {
-    port: 5000 // Mantener mismo puerto para compatibilidad
+    port: 5000, // Mantener mismo puerto para compatibilidad
+    host: true, // Permitir acceso desde todas las redes
+    strictPort: true,
+    hmr: {
+      clientPort: 443 // Necesario para Replit
+    },
+    // Permitir todos los hosts
+    fs: {
+      strict: false
+    },
+    origin: 'https://math-olympiad-web.joseluisgs.repl.co',
+    cors: true,
+    // Permitir específicamente este host
+    allowedHosts: ["179f461c-0e47-4964-b00c-5094fc7bdb57-00-al992npk2nss.worf.replit.dev", "all"]
   }
 });
