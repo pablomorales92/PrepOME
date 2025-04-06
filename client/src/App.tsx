@@ -41,11 +41,11 @@ function Router() {
   
   return (
     <Switch>
-      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682" component={Home} />
-      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/que-es" component={AboutPage}/>
-      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/calendario" component={CalendarPage}/>
-      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/material" component={MaterialPage}/>
-      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/enlaces" component={LinksPage}/>
+      <Route path="/PrepOME" component={Home} />
+      <Route path="/PrepOME/que-es" component={AboutPage}/>
+      <Route path="/PrepOME/calendario" component={CalendarPage}/>
+      <Route path="/PrepOME/material" component={MaterialPage}/>
+      <Route path="/PrepOME/enlaces" component={LinksPage}/>
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />
@@ -58,11 +58,11 @@ function App() {
 
   // Check if current path is unmatched (NotFound)
   const isNotFound = ![
-    "/PrepOME/644e064fd4181786a7db0846f06a3682",
-    "/PrepOME/644e064fd4181786a7db0846f06a3682/que-es",
-    "/PrepOME/644e064fd4181786a7db0846f06a3682/calendario",
-    "/PrepOME/644e064fd4181786a7db0846f06a3682/material",
-    "/PrepOME/644e064fd4181786a7db0846f06a3682/enlaces"
+    "/PrepOME",
+    "/PrepOME/que-es",
+    "/PrepOME/calendario",
+    "/PrepOME/material",
+    "/PrepOME/enlaces"
   ].includes(location);
 
   return (
