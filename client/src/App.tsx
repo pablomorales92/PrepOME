@@ -41,11 +41,11 @@ function Router() {
   
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/que-es" component={AboutPage}/>
-      <Route path="/calendario" component={CalendarPage}/>
-      <Route path="/material" component={MaterialPage}/>
-      <Route path="/enlaces" component={LinksPage}/>
+      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682" component={Home} />
+      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/que-es" component={AboutPage}/>
+      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/calendario" component={CalendarPage}/>
+      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/material" component={MaterialPage}/>
+      <Route path="/PrepOME/644e064fd4181786a7db0846f06a3682/enlaces" component={LinksPage}/>
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />

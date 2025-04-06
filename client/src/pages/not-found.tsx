@@ -17,7 +17,7 @@ export default function NotFound() {
           </p>
           
           <HashLink 
-            to="/" 
+            to="/PrepOME/644e064fd4181786a7db0846f06a3682" 
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 transition-colors w-fit"
           >
             <Home size={16} />
