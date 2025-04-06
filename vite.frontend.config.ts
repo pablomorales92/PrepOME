@@ -29,7 +29,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
-  base: "./", // Importante para GitHub Pages
+  base: "./aa/", // Importante para GitHub Pages
   server: {
     port: 4000, // Mantener mismo puerto para compatibilidad
     host: true, // Permitir acceso desde todas las redes
@@ -41,9 +41,6 @@ export default defineConfig({
     fs: {
       strict: false
     },
-    origin: 'https://math-olympiad-web.joseluisgs.repl.co',
-    cors: true,
-    // Permitir específicamente este host
-    allowedHosts: ["179f461c-0e47-4964-b00c-5094fc7bdb57-00-al992npk2nss.worf.replit.dev", "all"]
+    cors: true
   }
 });
