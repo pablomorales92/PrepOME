@@ -54,8 +54,24 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+
+  // Check if current path is unmatched (NotFound)
+  const isNotFound = ![
+    "/PrepOME/644e064fd4181786a7db0846f06a3682",
+    "/PrepOME/644e064fd4181786a7db0846f06a3682/que-es",
+    "/PrepOME/644e064fd4181786a7db0846f06a3682/calendario",
+    "/PrepOME/644e064fd4181786a7db0846f06a3682/material",
+    "/PrepOME/644e064fd4181786a7db0846f06a3682/enlaces"
+  ].includes(location);
+
   return (
     <QueryClientProvider client={queryClient}>
+    {isNotFound ? (
+      <main className="flex-grow">
+        <Router />
+      </main>
+    ) : (
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow pt-20">
@@ -63,8 +79,9 @@ function App() {
         </main>
         <Footer />
       </div>
-      <Toaster />
-    </QueryClientProvider>
+    )}
+    <Toaster />
+  </QueryClientProvider>
   );
 }
 

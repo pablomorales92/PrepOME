@@ -16,13 +16,13 @@ export default function NotFound() {
             Lo sentimos, la página que buscas no existe o ha sido movida a otra ubicación.
           </p>
           
-          <HashLink 
-            to="/PrepOME/644e064fd4181786a7db0846f06a3682" 
+          <a 
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 transition-colors w-fit"
           >
             <Home size={16} />
             Volver a la página principal
-          </HashLink>
+          </a>
         </CardContent>
       </Card>
     </div>
