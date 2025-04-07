@@ -55,6 +55,7 @@ function Router() {
 
 function App() {
   const [location] = useLocation();
+  const normalizedLocation = location.replace(/\/+$/, ""); // remove trailing slashes
 
   // Check if current path is unmatched (NotFound)
   const isNotFound = ![
@@ -63,7 +64,7 @@ function App() {
     "/PrepOME/calendario",
     "/PrepOME/material",
     "/PrepOME/enlaces"
-  ].includes(location);
+  ].includes(normalizedLocation);
 
   return (
     <QueryClientProvider client={queryClient}>
