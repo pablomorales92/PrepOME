@@ -4,37 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Olimpiada Matemática Española</title>
-    
-    <!-- Script para manejar el enrutamiento en GitHub Pages -->
-    <script type="text/javascript">
-      // Este script procesa las URL que vienen redirigidas desde 404.html
-      (function() {
-        // Sólo se ejecuta si estamos en GitHub Pages
-        if (window.location.search.indexOf('?/') !== -1) {
-          var redirectPath = window.location.search.substring(2);
-          var queryParams = '';
-          var hashFragment = '';
-          
-          // Manejar parámetros de consulta y fragmento hash
-          var searchDelimiterPosition = redirectPath.indexOf('&');
-          if (searchDelimiterPosition !== -1) {
-            queryParams = redirectPath.substring(searchDelimiterPosition).replace(/~and~/g, '&');
-            redirectPath = redirectPath.substring(0, searchDelimiterPosition);
-          }
-          
-          // Extraer fragmento hash
-          var hashPosition = redirectPath.indexOf('#');
-          if (hashPosition !== -1) {
-            hashFragment = redirectPath.substring(hashPosition);
-            redirectPath = redirectPath.substring(0, hashPosition);
-          }
-          
-          // Reemplazar la ubicación actual con la ruta original
-          window.history.replaceState(null, null, 
-            redirectPath + (queryParams || '') + (hashFragment || ''));
-        }
-      })();
-    </script>
   </head>
   <body>
     <div id="root"></div>
