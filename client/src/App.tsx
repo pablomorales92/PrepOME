@@ -66,6 +66,16 @@ function App() {
     "/PrepOME/enlaces"
   ].includes(normalizedLocation);
 
+  useEffect(() => {
+    console.log("Location on GitHub Pages:", normalizedLocation);
+  }, [normalizedLocation]);
+
+  
+  useEffect(() => {
+    console.log("isNotFound:", isNotFound);
+  }, [isNotFound]);
+  
+
   return (
     <QueryClientProvider client={queryClient}>
     {isNotFound ? (
