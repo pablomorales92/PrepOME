@@ -34,7 +34,6 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          VITE_URL_HASH: ${{ secrets.VITE_URL_HASH }}
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

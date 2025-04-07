@@ -3,7 +3,6 @@ import { Menu, X } from 'lucide-react';
 import HashLink from './HashLink';
 
 const Header: React.FC = () => {
-  const URL_HASH = import.meta.env.VITE_URL_HASH;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -24,10 +23,10 @@ const Header: React.FC = () => {
 
   // Define navigation links - usando el formato adecuado para el enrutamiento basado en hash
   const navLinks = [
-    { text: '¿Qué es?', href: `/PrepOME/${URL_HASH}/que-es` },
-    { text: 'Calendario', href: `/PrepOME/${URL_HASH}/calendario` },
-    { text: 'Material', href: `/PrepOME/${URL_HASH}/material` },
-    { text: 'Enlaces', href: `/PrepOME/${URL_HASH}/enlaces` },
+    { text: '¿Qué es?', href: '/PrepOME/que-es' },
+    { text: 'Calendario', href: '/PrepOME/calendario' },
+    { text: 'Material', href: '/PrepOME/material' },
+    { text: 'Enlaces', href: '/PrepOME/enlaces' },
     { text: 'Contacto', href: '#footer' }, // Esto es un enlace de ancla, por lo que se mantiene como #
   ];
 
@@ -36,7 +35,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <HashLink to={`/PrepOME/${URL_HASH}`} className="flex items-center">
+          <HashLink to="/PrepOME" className="flex items-center">
             <img 
               src="https://www.rsme.es/wp-content/uploads/2019/01/logoOMEgrande-276x300.jpg" 
               alt="Olimpiada Matemática Española" 

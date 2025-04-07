@@ -38,16 +38,14 @@ function Router() {
   // Usamos el hook personalizado para la navegación basada en hash
   // @ts-ignore - Ignoramos errores de tipado ya que el formato es compatible con wouter
   useLocation.use = useHashLocation;
-
-  const URL_HASH = import.meta.env.VITE_URL_HASH;
   
   return (
     <Switch>
-      <Route path={`/PrepOME/${URL_HASH}`} component={Home} />
-      <Route path={`/PrepOME/${URL_HASH}/que-es`} component={AboutPage}/>
-      <Route path={`/PrepOME/${URL_HASH}/calendario`} component={CalendarPage}/>
-      <Route path={`/PrepOME/${URL_HASH}/material`} component={MaterialPage}/>
-      <Route path={`/PrepOME/${URL_HASH}/enlaces`} component={LinksPage}/>
+      <Route path="/PrepOME" component={Home} />
+      <Route path="/PrepOME/que-es" component={AboutPage}/>
+      <Route path="/PrepOME/calendario" component={CalendarPage}/>
+      <Route path="/PrepOME/material" component={MaterialPage}/>
+      <Route path="/PrepOME/enlaces" component={LinksPage}/>
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />
@@ -58,15 +56,14 @@ function Router() {
 function App() {
   const [location] = useLocation();
   const normalizedLocation = location.replace(/\/+$/, ""); // remove trailing slashes
-  const URL_HASH = import.meta.env.VITE_URL_HASH;
 
   // Check if current path is unmatched (NotFound)
   const isNotFound = ![
-    `/PrepOME/${URL_HASH}`,
-    `/PrepOME/${URL_HASH}/que-es`,
-    `/PrepOME/${URL_HASH}/calendario`,
-    `/PrepOME/${URL_HASH}/material`,
-    `/PrepOME/${URL_HASH}/enlaces`
+    "/PrepOME",
+    "/PrepOME/que-es",
+    "/PrepOME/calendario",
+    "/PrepOME/material",
+    "/PrepOME/enlaces"
   ].includes(normalizedLocation);
 
   useEffect(() => {
@@ -77,10 +74,6 @@ function App() {
   useEffect(() => {
     console.log("isNotFound:", isNotFound);
   }, [isNotFound]);
-
-  useEffect(() => {
-    console.log("URL_HASH:", URL_HASH);
-  }, [URL_HASH]);
   
 
   return (
