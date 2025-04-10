@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://jerry-master.github.io/PrepOME",
+  "homepage": "https://preparaomegrx.es/",
   "scripts": {
     "dev": "vite --config vite.frontend.config.ts",
     "build": "vite build --config vite.frontend.config.ts",

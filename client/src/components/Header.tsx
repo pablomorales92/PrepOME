@@ -23,10 +23,10 @@ const Header: React.FC = () => {
 
   // Define navigation links - usando el formato adecuado para el enrutamiento basado en hash
   const navLinks = [
-    { text: '¿Qué es?', href: '/PrepOME/que-es' },
-    { text: 'Calendario', href: '/PrepOME/calendario' },
-    { text: 'Material', href: '/PrepOME/material' },
-    { text: 'Enlaces', href: '/PrepOME/enlaces' },
+    { text: '¿Qué es?', href: '/que-es' },
+    { text: 'Calendario', href: '/calendario' },
+    { text: 'Material', href: '/material' },
+    { text: 'Enlaces', href: '/enlaces' },
     { text: 'Contacto', href: '#footer' }, // Esto es un enlace de ancla, por lo que se mantiene como #
   ];
 
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <HashLink to="/PrepOME" className="flex items-center">
+          <HashLink to="/" className="flex items-center">
             <img 
               src="https://www.rsme.es/wp-content/uploads/2019/01/logoOMEgrande-276x300.jpg" 
               alt="Olimpiada Matemática Española" 

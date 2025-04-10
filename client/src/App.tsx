@@ -41,11 +41,11 @@ function Router() {
   
   return (
     <Switch>
-      <Route path="/PrepOME" component={Home} />
-      <Route path="/PrepOME/que-es" component={AboutPage}/>
-      <Route path="/PrepOME/calendario" component={CalendarPage}/>
-      <Route path="/PrepOME/material" component={MaterialPage}/>
-      <Route path="/PrepOME/enlaces" component={LinksPage}/>
+      <Route path="/" component={Home} />
+      <Route path="/que-es" component={AboutPage}/>
+      <Route path="/calendario" component={CalendarPage}/>
+      <Route path="/material" component={MaterialPage}/>
+      <Route path="/enlaces" component={LinksPage}/>
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />
@@ -59,11 +59,11 @@ function App() {
 
   // Check if current path is unmatched (NotFound)
   const isNotFound = ![
-    "/PrepOME",
-    "/PrepOME/que-es",
-    "/PrepOME/calendario",
-    "/PrepOME/material",
-    "/PrepOME/enlaces"
+    "",
+    "/que-es",
+    "/calendario",
+    "/material",
+    "/enlaces"
   ].includes(normalizedLocation);
 
   useEffect(() => {
