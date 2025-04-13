@@ -56,24 +56,24 @@ const MaterialPage: React.FC = () => {
   // Datos de los materiales por categoría
   const problemSets = [
     {
-      title: "Problemas Fase Local 2024",
+      title: "Problemas Fase Local 1997-2024",
       description: "Colección de problemas propuestos en la fase local de los últimos años.",
       type: "file" as const,
-      downloadLink: "#",
+      downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/localOME.zip",
       viewLink: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/"
     },
     {
-      title: "Problemas Fase Autonómica 2023-2024",
-      description: "Problemas de la fase autonómica con soluciones y comentarios del jurado.",
+      title: "Problemas Fase Autonómica 2019-2025",
+      description: "Problemas de la fase autonómica con soluciones.",
       type: "file" as const,
-      downloadLink: "#",
+      downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/OMA.zip",
       viewLink: "https://web.ujaen.es/eventos/omatematica/oma/oma6.php"
     },
     {
-      title: "Colección histórica problemas OME (1993-2024)",
+      title: "Colección histórica problemas OME 1993-2025",
       description: "Recopilación de problemas propuestos en las últimas ediciones de la Olimpiada Matemática Española.",
       type: "file" as const,
-      downloadLink: "#",
+      downloadLink: "https://github.com/Jerry-Master/PrepOME/raw/refs/heads/main/Material/OME.zip",
       viewLink: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/"
     }
   ];
