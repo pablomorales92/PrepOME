@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import HashLink from './HashLink';
+import logoOme from '../assets/logoOMEgrande-276x300.jpg';
+import logoUgr from '../assets/ugr-horizontal-color.svg';
+import logoUgrMobile from '../assets/ugr-mobile.svg';
+
+function getIsMobile() : boolean {
+  return window.innerWidth < 768;
+}
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(getIsMobile());
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Close mobile menu on window resize
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768 && mobileMenuOpen) {
+      // Close mobile menu on window resize
+      if (!isMobile && mobileMenuOpen) {
         setMobileMenuOpen(false);
       }
+      setIsMobile(getIsMobile());
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, isMobile]);
 
   // Define navigation links - usando el formato adecuado para el enrutamiento basado en hash
   const navLinks = [
@@ -35,12 +44,24 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <HashLink to="/" className="flex items-center">
+          <HashLink to="/" className="flex items-center gap-4">
             <img 
-              src="https://www.rsme.es/wp-content/uploads/2019/01/logoOMEgrande-276x300.jpg" 
+              src={logoOme}
               alt="Olimpiada Matemática Española" 
               className="h-14"
             />
+            {isMobile ? 
+              <img 
+                src={logoUgrMobile}
+                alt="Universidad de Granada" 
+                className="h-14"
+              /> :
+              <img 
+                src={logoUgr}
+                alt="Universidad de Granada" 
+                className="h-14"
+              />
+            }
           </HashLink>
           
           {/* Desktop Navigation */}
