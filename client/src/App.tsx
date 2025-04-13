@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import AboutPage from "@/pages/AboutPage";
+import WhoPage from "@/pages/WhoPage";
 import CalendarPage from "@/pages/CalendarPage";
 import MaterialPage from "@/pages/MaterialPage";
 import LinksPage from "@/pages/LinksPage";
@@ -43,6 +44,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/que-es" component={AboutPage}/>
+      <Route path="/quien-es" component={WhoPage}/>
       <Route path="/calendario" component={CalendarPage}/>
       <Route path="/material" component={MaterialPage}/>
       <Route path="/enlaces" component={LinksPage}/>
@@ -61,20 +63,11 @@ function App() {
   const isNotFound = ![
     "",
     "/que-es",
+    "/quien-es",
     "/calendario",
     "/material",
     "/enlaces"
-  ].includes(normalizedLocation);
-
-  useEffect(() => {
-    console.log("Location on GitHub Pages:", normalizedLocation);
-  }, [normalizedLocation]);
-
-  
-  useEffect(() => {
-    console.log("isNotFound:", isNotFound);
-  }, [isNotFound]);
-  
+  ].includes(normalizedLocation);  
 
   return (
     <QueryClientProvider client={queryClient}>
