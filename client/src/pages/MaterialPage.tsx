@@ -33,14 +33,18 @@ const MaterialItem: React.FC<MaterialItemProps> = ({ title, description, type, d
         <p className="text-muted-foreground text-sm mb-3">{description}</p>
         <div className="flex flex-wrap gap-2">
           {downloadLink && (
-            <Button size="sm" variant="outline" className="text-xs flex items-center gap-1">
-              <Download className="h-3 w-3" /> Descargar
-            </Button>
+            <a href={downloadLink} download>
+              <Button size="sm" variant="outline" className="text-xs flex items-center gap-1">
+                <Download className="h-3 w-3" /> Descargar
+              </Button>
+            </a>
           )}
           {viewLink && (
-            <Button size="sm" variant="secondary" className="text-xs">
-              Ver material
-            </Button>
+            <a href={viewLink} target="_blank" rel="noopener noreferrer">
+              <Button size="sm" variant="secondary" className="text-xs">
+                Ver material
+              </Button>
+            </a>
           )}
         </div>
       </div>
@@ -53,24 +57,24 @@ const MaterialPage: React.FC = () => {
   const problemSets = [
     {
       title: "Problemas Fase Local 2024",
-      description: "Colección de problemas propuestos en la fase local del año anterior con soluciones detalladas.",
+      description: "Colección de problemas propuestos en la fase local de los últimos años.",
       type: "file" as const,
       downloadLink: "#",
-      viewLink: "#"
+      viewLink: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/"
     },
     {
       title: "Problemas Fase Autonómica 2023-2024",
       description: "Problemas de la fase autonómica con soluciones y comentarios del jurado.",
       type: "file" as const,
       downloadLink: "#",
-      viewLink: "#"
+      viewLink: "https://web.ujaen.es/eventos/omatematica/oma/oma6.php"
     },
     {
-      title: "Colección histórica problemas OME (2010-2023)",
+      title: "Colección histórica problemas OME (1993-2024)",
       description: "Recopilación de problemas propuestos en las últimas ediciones de la Olimpiada Matemática Española.",
       type: "file" as const,
       downloadLink: "#",
-      viewLink: "#"
+      viewLink: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/"
     }
   ];
 
