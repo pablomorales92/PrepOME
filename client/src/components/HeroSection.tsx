@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
       height: '70vh'
     }}>
       <div className="text-center text-white px-4 md:px-0">
-        <h1 className="font-heading font-bold text-3xl md:text-5xl mb-2 md:mb-4">¡Participa en la Olimpiada de Matemáticas 2025!</h1>
+        <h1 className="font-heading font-bold text-3xl md:text-5xl mb-2 md:mb-4">¡Participa en la Olimpiada de Matemáticas!</h1>
         <p className="text-lg md:text-xl mb-6">Desafíos, diversión y premios esperan.</p>
         <a href="#subscription">
           <Button 
