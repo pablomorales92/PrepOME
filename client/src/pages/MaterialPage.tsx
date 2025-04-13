@@ -80,25 +80,10 @@ const MaterialPage: React.FC = () => {
 
   const trainingMaterials = [
     {
-      title: "Introducción a la Teoría de Números",
-      description: "Manual básico sobre teoría de números, congruencias, primos y teorema de Fermat.",
+      title: "Euclidean Geometry in Mathematical Olympiads",
+      description: "Libro de referencia en el ámbito de problemas de geometría en olimpiadas matemáticas.",
       type: "book" as const,
-      downloadLink: "#",
-      viewLink: "#"
-    },
-    {
-      title: "Geometría para olimpiadas",
-      description: "Conceptos y técnicas avanzadas de geometría para resolución de problemas olímpicos.",
-      type: "book" as const,
-      downloadLink: "#",
-      viewLink: "#"
-    },
-    {
-      title: "Combinatoria y principio del palomar",
-      description: "Técnicas de conteo, permutaciones, combinaciones y aplicaciones.",
-      type: "book" as const,
-      downloadLink: "#",
-      viewLink: "#"
+      viewLink: "https://web.evanchen.cc/geombook.html"
     }
   ];
 
@@ -146,7 +131,7 @@ const MaterialPage: React.FC = () => {
               title={item.title}
               description={item.description}
               type={item.type}
-              downloadLink={item.downloadLink}
+              // downloadLink={item.downloadLink}
               viewLink={item.viewLink}
             />
           ))}

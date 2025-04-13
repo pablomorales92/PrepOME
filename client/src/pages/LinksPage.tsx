@@ -67,20 +67,8 @@ const LinksPage: React.FC = () => {
     {
       title: "Olimpiada Matemática Iberoamericana",
       description: "Competición regional que reúne a estudiantes de países de Iberoamérica.",
-      url: "https://www.oei.es/historico/oim/",
+      url: "https://www.rsme.es/olimpiada-iberoamericana-de-matematicas/",
       category: "international"
-    },
-    {
-      title: "Brilliant",
-      description: "Plataforma de aprendizaje interactivo con cursos de matemáticas y ciencias.",
-      url: "https://brilliant.org/",
-      category: "resources"
-    },
-    {
-      title: "Khan Academy",
-      description: "Plataforma educativa gratuita con cursos y ejercicios de matemáticas.",
-      url: "https://es.khanacademy.org/",
-      category: "resources"
     },
     {
       title: "IMO Compendium",
@@ -93,6 +81,30 @@ const LinksPage: React.FC = () => {
       description: "Olimpiada matemática internacional para estudiantes femeninas.",
       url: "https://www.egmo.org/",
       category: "international"
+    },
+    {
+      title: "Apuntes UGR",
+      description: "Recursos de preparación de olimpiadas (Pascual Jara).",
+      url: "https://wpd.ugr.es/~olimpiada/index.php",
+      category: "resources"
+    },
+    {
+      title: "Competición Matemática Mediterránea",
+      description: "Competición europea a la que solo se accede por invitación.",
+      url: "https://mural.uv.es/rorunu/cmm/",
+      category: "international"
+    },
+    {
+      title: "Math Summer Camp",
+      description: "Campamento de verano de matemáticas en Barcelona.",
+      url: "https://www.apotema.cat/convocatoria-math-summer-camp-2024/",
+      category: "camps"
+    },
+    {
+      title: "PROMYS",
+      description: "Campamento de verano de matemáticas en Reino Unido.",
+      url: "https://promys.org/",
+      category: "camps"
     }
   ];
 
@@ -100,6 +112,7 @@ const LinksPage: React.FC = () => {
   const nationalLinks = links.filter(link => link.category === 'national');
   const internationalLinks = links.filter(link => link.category === 'international');
   const resourceLinks = links.filter(link => link.category === 'resources');
+  const campsLinks = links.filter(link => link.category === 'camps');
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12">
@@ -146,6 +159,22 @@ const LinksPage: React.FC = () => {
         <h2 className="font-heading font-bold text-2xl text-foreground mb-4">Recursos y plataformas de aprendizaje</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {resourceLinks.map((link, index) => (
+            <LinkItem 
+              key={index}
+              title={link.title}
+              description={link.description}
+              url={link.url}
+              category={link.category}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Campamentos */}
+      <section className="mb-10">
+        <h2 className="font-heading font-bold text-2xl text-foreground mb-4">Campamentos</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {campsLinks.map((link, index) => (
             <LinkItem 
               key={index}
               title={link.title}
