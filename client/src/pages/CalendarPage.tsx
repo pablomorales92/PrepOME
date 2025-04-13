@@ -1,4 +1,12 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
+import HashLink from '@/components/HashLink';
+
+interface LinkProps {
+  url: string;
+  description: string;
+  external: boolean;
+}
 
 // Componente para mostrar un evento del calendario
 interface EventProps {
@@ -6,10 +14,11 @@ interface EventProps {
   title: string;
   description: string;
   location?: string;
+  link?: LinkProps;
   important?: boolean;
 }
 
-const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, important = false }) => {
+const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false }) => {
   return (
     <div className={`border-l-4 ${important ? 'border-primary' : 'border-muted'} pl-4 py-4`}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
@@ -24,6 +33,25 @@ const CalendarEvent: React.FC<EventProps> = ({ date, title, description, locatio
           <span className="font-medium">Ubicación:</span> {location}
         </p>
       )}
+      {link && link.external && (
+        <a
+          href={link.url} target="_blank"
+          rel="noopener noreferrer" 
+          className="text-sm text-primary hover:underline flex items-center"
+        >
+          {link.description}
+          <ExternalLink size={12} className="ml-1" />
+        </a>
+      )}
+      {link && !link.external && (
+        <HashLink
+          to={link.url} 
+          className="text-sm text-primary hover:underline flex items-center"
+        >
+          {link.description}
+          <ExternalLink size={12} className="ml-1" />
+        </HashLink>
+      )}
     </div>
   );
 };
@@ -32,79 +60,59 @@ const CalendarPage: React.FC = () => {
   // Datos de los eventos
   const events = [
     {
-      date: '15 de noviembre de 2024',
-      title: 'Apertura de inscripciones',
-      description: 'Comienza el periodo de inscripción para centros educativos y participantes individuales.',
+      date: 'Septiembre 2025 - Marzo 2026',
+      title: 'Sesiones de preparación',
+      description: 'Se proporcionará un calendario más detallado de las sesiones de preparación. De manera tentativa, habrá sesiones todos los sábados, descansando un sábado cada mes.',
+      link: {
+        url: "/#subscription",
+        description: "Suscríbete para estar informado",
+        external: false
+      },
+      location: "Facultad de Ciencias UGR",
       important: true
     },
     {
-      date: '20 de diciembre de 2024',
-      title: 'Cierre de inscripciones',
-      description: 'Fecha límite para completar el registro de participantes.',
+      date: 'Enero 2026',
+      title: 'Fase local de la OME',
+      description: 'La prueba consta de dos exámenes de tres horas y medias con tres problemas cada uno.',
+      link: {
+        url: "https://www.rsme.es/olimpiada-matematica-espanola/problemas-propuestos-y-resultados/",
+        description: "Ver problemas años anteriores",
+        external: true
+      },
       important: true
     },
     {
-      date: '25 de enero de 2025',
-      title: 'Fase Local',
-      description: 'Primera etapa de la competición. Se realiza en cada centro educativo.',
-      location: 'Centros educativos participantes',
+      date: 'Febrero 2026',
+      title: 'Fase regional: Olimpiada Matemática Andaluza',
+      description: 'La prueba consta de cuatro problemas a realizar en cuatro horas.',
+      link: {
+        url: "https://web.ujaen.es/eventos/omatematica/oma/",
+        description: "Ver edición anterior",
+        external: true
+      },
+      location: 'Por decidir.',
       important: true
     },
     {
-      date: '15 de febrero de 2025',
-      title: 'Publicación de resultados - Fase Local',
-      description: 'Anuncio de los estudiantes clasificados para la siguiente fase.'
-    },
-    {
-      date: '1 de marzo de 2025',
-      title: 'Seminario preparatorio',
-      description: 'Sesión de preparación para los clasificados a la fase autonómica.',
-      location: 'Online (Zoom)'
-    },
-    {
-      date: '15 de marzo de 2025',
-      title: 'Fase Autonómica',
-      description: 'Segunda etapa de la competición. Participan los clasificados de la fase local.',
-      location: 'Sedes universitarias de cada comunidad autónoma',
-      important: true
-    },
-    {
-      date: '5 de abril de 2025',
-      title: 'Publicación de resultados - Fase Autonómica',
-      description: 'Anuncio de los estudiantes clasificados para la fase nacional.'
-    },
-    {
-      date: '10-15 de mayo de 2025',
-      title: 'Programa de preparación intensiva',
-      description: 'Campamento de entrenamiento para los clasificados a la fase nacional.',
-      location: 'Universidad de Granada'
-    },
-    {
-      date: '20 de mayo de 2025',
-      title: 'Fase Nacional',
-      description: 'Final nacional con los mejores clasificados de cada comunidad autónoma.',
-      location: 'Madrid, Facultad de Ciencias Matemáticas UCM',
-      important: true
-    },
-    {
-      date: '10 de junio de 2025',
-      title: 'Anuncio de seleccionados para IMO',
-      description: 'Publicación del equipo que representará a España en la Olimpiada Internacional de Matemáticas.'
-    },
-    {
-      date: '5-15 de julio de 2025',
-      title: 'Olimpiada Internacional de Matemáticas (IMO)',
-      description: 'Competición internacional donde participan los mejores estudiantes seleccionados de cada país.',
-      location: 'Por confirmar',
+      date: 'Marzo - Abril 2026',
+      title: 'Fase nacional de la OME',
+      description: 'Al igual que en la fase local se compone de dos exámenes de tres problemas que deberán resolverse en tres horas y media cada uno.',
+      location: 'Por decidir.',
+      link: {
+        url: "http://ome2025.uniovi.es/",
+        description: "Ver edición anterior",
+        external: true
+      },
       important: true
     }
   ];
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12">
-      <h1 className="font-heading font-bold text-3xl text-foreground mb-6">Calendario Olimpiada Matemática 2024-2025</h1>
+      <h1 className="font-heading font-bold text-3xl text-foreground mb-6">Calendario Olimpiada Matemática 2025-2026</h1>
       
-      <p className="text-muted-foreground mb-8">A continuación, presentamos las fechas más importantes relacionadas con la Olimpiada Matemática para el curso 2024-2025. Las fechas exactas pueden estar sujetas a pequeñas variaciones, que serán comunicadas con antelación.</p>
+      <p className="text-muted-foreground mb-8">A continuación, presentamos las fechas más importantes relacionadas con la Olimpiada Matemática para el curso 2025-2026. Las fechas exactas pueden estar sujetas a pequeñas variaciones, que serán comunicadas con antelación.</p>
       
       <div className="grid grid-cols-1 gap-y-6 mb-12">
         {events.map((event, index) => (
@@ -114,6 +122,7 @@ const CalendarPage: React.FC = () => {
             title={event.title}
             description={event.description}
             location={event.location}
+            link={event.link}
             important={event.important}
           />
         ))}
@@ -126,7 +135,7 @@ const CalendarPage: React.FC = () => {
           <li>La participación en la Fase Nacional está sujeta a los criterios de selección establecidos por cada comunidad autónoma.</li>
           <li>La selección para la Olimpiada Internacional se realizará entre los finalistas de la Fase Nacional.</li>
         </ul>
-        <p className="text-muted-foreground">Para cualquier duda relacionada con las fechas y ubicaciones, por favor contacta con la organización a través del <a href="mailto:info@olimpiadamatematica.es" className="text-primary hover:underline">correo electrónico</a> o el formulario de contacto.</p>
+        <p className="text-muted-foreground">Para cualquier duda relacionada con las fechas y ubicaciones, por favor contacta con la organización a través del <a href="mailto:olimpiada@ugr.es" className="text-primary hover:underline">correo electrónico</a> o el formulario de contacto.</p>
       </div>
     </div>
   );
