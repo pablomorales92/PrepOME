@@ -1,6 +1,6 @@
 # Preparación Olimpiada Matemática
 
-Esta página es un dummy mientras desarrollamos el landing page de la preparación de olimpiadas de la UGR.
+Landing page de la preparación de olimpiadas matemáticas de la UGR.
 
 ## Cómo usar este proyecto
 
@@ -22,6 +22,7 @@ Esta página es un dummy mientras desarrollamos el landing page de la preparaci�
 - `/client/src/pages` - Páginas principales del sitio
 - `/client/src/lib` - Utilidades y configuración
 - `/client/public` - Archivos estáticos
+- `/Material` - PDFs de problemas
 
 ## Notas
 
