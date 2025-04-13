@@ -15,8 +15,8 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">¿Qué es la Olimpiada Matemática?</h2>
-              <p className="text-muted-foreground mb-4">La Olimpiada Matemática Española (OME) es un concurso de resolución de problemas matemáticos dirigido a estudiantes de Bachillerato con especial talento e interés por las matemáticas.</p>
-              <p className="text-muted-foreground">El objetivo principal es estimular el estudio de las matemáticas y el desarrollo de jóvenes talentos en esta disciplina.</p>
+              <p className="text-muted-foreground mb-4">La Olimpiada Matemática Española (OME) es una competición de resolución de problemas matemáticos dirigida a estudiantes de bachillerato (y últimos cursos de la ESO).</p>
+              <p className="text-muted-foreground">El objetivo principal es estimular el estudio de las matemáticas entre los jóvenes y servir como medio para la detección y el estímulo del talento matemático.</p>
               <HashLink to="/que-es" className="inline-block mt-4 text-primary font-semibold hover:underline">Leer más →</HashLink>
             </div>
             <div>
@@ -26,9 +26,8 @@ const Home: React.FC = () => {
                 <li>Reconocimiento académico a nivel nacional</li>
                 <li>Posibilidad de representar a España en competiciones internacionales</li>
                 <li>Premios y becas para los mejores clasificados</li>
-                <li>Contacto con otros estudiantes apasionados por las matemáticas</li>
               </ul>
-              <HashLink to="/que-es" className="inline-block mt-4 text-primary font-semibold hover:underline">Ver todos los beneficios →</HashLink>
+              <HashLink to="/que-es#beneficios" className="inline-block mt-4 text-primary font-semibold hover:underline">Ver todos los beneficios →</HashLink>
             </div>
           </div>
         </div>

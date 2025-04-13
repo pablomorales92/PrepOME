@@ -23,6 +23,22 @@ const HashLink = ({ to, children, className, onClick }: HashLinkProps) => {
     
     // Navegamos a la ruta utilizando el hash
     navigate(to);
+
+    // Scroll logic
+    const [, hash] = to.split('#');
+
+    requestAnimationFrame(() => {
+      if (!hash || hash === 'top') {
+        // Scroll to top of page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Scroll to target element
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
   };
 
   return (
