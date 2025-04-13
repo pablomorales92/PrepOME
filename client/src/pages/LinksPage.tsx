@@ -93,18 +93,6 @@ const LinksPage: React.FC = () => {
       description: "Olimpiada matemática internacional para estudiantes femeninas.",
       url: "https://www.egmo.org/",
       category: "international"
-    },
-    {
-      title: "Mediterranean Youth Mathematical Championship",
-      description: "Competición matemática para jóvenes de países mediterráneos.",
-      url: "http://www.mymc-math.org/",
-      category: "international"
-    },
-    {
-      title: "Mathematical Association of America",
-      description: "Organización que promueve la educación matemática y organiza competiciones en Estados Unidos.",
-      url: "https://www.maa.org/",
-      category: "international"
     }
   ];
 
@@ -173,7 +161,7 @@ const LinksPage: React.FC = () => {
       <div className="bg-muted p-6 rounded-lg">
         <h3 className="font-heading font-bold text-lg mb-2">¿Conoces algún otro recurso útil?</h3>
         <p className="text-muted-foreground">
-          Si conoces algún otro sitio web o recurso que pueda ser de interés para la comunidad de las olimpiadas matemáticas, no dudes en compartirlo con nosotros a través del <a href="mailto:info@olimpiadamatematica.es" className="text-primary hover:underline">correo electrónico</a>. Valoramos tus sugerencias para mejorar esta sección.
+          Si conoces algún otro sitio web o recurso que pueda ser de interés para la comunidad de las olimpiadas matemáticas, no dudes en compartirlo con nosotros a través del <a href="mailto:olimpiada@ugr.es" className="text-primary hover:underline">correo electrónico</a>. Valoramos tus sugerencias para mejorar esta sección.
         </p>
       </div>
     </div>
