@@ -95,7 +95,7 @@ const CalendarPage: React.FC = () => {
       important: true
     },
     {
-      date: 'Marzo - Abril 2026',
+      date: 'Marzo - Mayo 2026',
       title: 'Fase nacional de la OME',
       description: 'Al igual que en la fase local se compone de dos exámenes de tres problemas que deberán resolverse en tres horas y media cada uno.',
       location: 'Por decidir.',
