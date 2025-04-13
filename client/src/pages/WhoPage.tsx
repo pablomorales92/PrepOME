@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
         <ImageWithDescription
           imageUrl={jose}
           altText="Jose Pérez Cano"
-          description="Jose Pérez Cano es un ingeniero de visión artificial de una empresa coreana. En 2018 ganó varias medallas en olimpiadas de física y matemáticas y una mención de honor en la IMO. Estudió matemáticas y ciencia e ingeniería de datos en el CFIS en Barcelona mientras mantenía su afición a las olimpiadas. Después investigó en la Universidad de Granada y la Politécnica de Cataluña antes de dar el salto a la industria. Su nombre aparece en los créditos de la película nominada a los Oscars 2024: *La Sociedad de la nieve* en la sección de Machine Learning. Además de trabajar también le gusta el gimnasio, la lectura, las películas, cocinar y viajar."
+          description="Jose Pérez Cano es un ingeniero de visión artificial de una empresa coreana. En 2018 ganó varias medallas en olimpiadas de física y matemáticas y una mención de honor en la IMO. Estudió matemáticas y ciencia e ingeniería de datos en el CFIS en Barcelona mientras mantenía su afición a las olimpiadas. Después investigó en la Universidad de Granada y la Politécnica de Cataluña antes de dar el salto a la industria. Su nombre aparece en los créditos de la película nominada a los Oscars 2024: La Sociedad de la nieve en la sección de Machine Learning. Además de trabajar también le gusta el gimnasio, la lectura, las películas, cocinar y viajar."
         />
       </div>
     </div>
