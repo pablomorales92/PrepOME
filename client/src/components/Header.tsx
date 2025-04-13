@@ -4,10 +4,7 @@ import HashLink from './HashLink';
 import logoOme from '../assets/logoOMEgrande-276x300.jpg';
 import logoUgr from '../assets/ugr-horizontal-color.svg';
 import logoUgrMobile from '../assets/ugr-mobile.svg';
-
-function getIsMobile() : boolean {
-  return window.innerWidth < 768;
-}
+import { getIsMobile } from './utils'
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
