@@ -104,22 +104,10 @@ const MaterialPage: React.FC = () => {
 
   const videoLectures = [
     {
-      title: "Técnicas de resolución de problemas olímpicos",
-      description: "Serie de 10 vídeos con estrategias y enfoques para abordar problemas de olimpiada.",
+      title: "FunGeometry",
+      description: "Un canal de YouTube de preparación de olimpiadas centrado en problemas de geometría.",
       type: "video" as const,
-      viewLink: "#"
-    },
-    {
-      title: "Masterclass: Inducción Matemática",
-      description: "Clase magistral sobre el principio de inducción y sus aplicaciones en olimpiadas.",
-      type: "video" as const,
-      viewLink: "#"
-    },
-    {
-      title: "Webinarios preparatorios 2024",
-      description: "Grabaciones de las sesiones de preparación realizadas para la OME 2024.",
-      type: "video" as const,
-      viewLink: "#"
+      viewLink: "https://youtube.com/@fungeometry?si=I2_Z13JJjMfL4zMO"
     }
   ];
 
