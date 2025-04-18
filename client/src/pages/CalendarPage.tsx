@@ -16,11 +16,12 @@ interface EventProps {
   location?: string;
   link?: LinkProps;
   important?: boolean;
+  idx?: string;
 }
 
-const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false }) => {
+const CalendarEvent: React.FC<EventProps> = ({ date, title, description, location, link, important = false, idx }) => {
   return (
-    <div className={`border-l-4 ${important ? 'border-primary' : 'border-muted'} pl-4 py-4`}>
+    <div id={idx} className={`scroll-mt-20 border-l-4 ${important ? 'border-primary' : 'border-muted'} pl-4 py-4`}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
         <h3 className="font-heading font-bold text-xl">{title}</h3>
         <span className={`text-sm font-medium ${important ? 'bg-primary/10 text-primary' : 'bg-muted text-muted-foreground'} px-3 py-1 rounded-full mb-2 md:mb-0`}>
@@ -80,7 +81,8 @@ const CalendarPage: React.FC = () => {
         description: "Ver problemas años anteriores",
         external: true
       },
-      important: true
+      important: true,
+      idx: "local"
     },
     {
       date: 'Febrero 2026',
@@ -92,7 +94,8 @@ const CalendarPage: React.FC = () => {
         external: true
       },
       location: 'Por decidir.',
-      important: true
+      important: true,
+      idx: "autonomico"
     },
     {
       date: 'Marzo - Mayo 2026',
@@ -104,7 +107,8 @@ const CalendarPage: React.FC = () => {
         description: "Ver edición anterior",
         external: true
       },
-      important: true
+      important: true,
+      idx: "nacional"
     }
   ];
 
@@ -124,6 +128,7 @@ const CalendarPage: React.FC = () => {
             location={event.location}
             link={event.link}
             important={event.important}
+            idx={event.idx}
           />
         ))}
       </div>

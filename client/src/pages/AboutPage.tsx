@@ -55,7 +55,7 @@ const AboutPage: React.FC = () => {
           No requieren conocimientos avanzados de matemáticas más allá del currículo preuniversitario, pero sí exigen creatividad, capacidad de razonamiento y habilidad para resolver problemas no rutinarios.
         </p>
         
-        <h2 id="beneficios" className="font-heading font-bold text-2xl text-foreground mt-8 mb-4">Beneficios de participar</h2>
+        <h2 id="beneficios" className="scroll-mt-20 font-heading font-bold text-2xl text-foreground mt-8 mb-4">Beneficios de participar</h2>
         <ul className="list-disc pl-5 text-muted-foreground space-y-2 mb-6">
           <li>Conectar con antiguos participantes que te puedan guiar y ayudar en tus primeros pasos universitarios.</li>
           <li>Orientar tu trayectoria universitaria hacia diferentes ámbitos. Como ves, los organizadores tenemos perfiles muy diversos, y conocemos a muchos otros antiguos olímpicos con trayectorias muy diferentes (tecnología, finanzas, salud, bioquímica etc.).</li>

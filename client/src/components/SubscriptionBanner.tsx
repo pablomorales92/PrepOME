@@ -4,11 +4,11 @@ import { Input } from '@/components/ui/input';
 
 const SubscriptionBanner: React.FC = () => {
   return (
-    <section id="subscription" className="bg-primary py-12 px-4">
+    <section id="subscription" className="scroll-mt-20 bg-primary py-12 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
           <h2 className="font-heading font-bold text-2xl md:text-3xl text-white mb-2">Mantente informado</h2>
-          <p className="text-white text-opacity-90">Recibe actualizaciones, materiales y fechas importantes de la Olimpiada Matemática</p>
+          <p className="text-white text-opacity-90">Recibe actualizaciones, materiales y fechas importantes de la preparación de olimpiadas.</p>
         </div>
 
         <form

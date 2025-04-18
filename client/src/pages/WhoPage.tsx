@@ -50,7 +50,7 @@ const AboutPage: React.FC = () => {
         </p>        
       </div>
 
-      <h1 id="nosotros" className="font-heading font-bold text-3xl text-foreground mb-6">El equipo</h1>
+      <h1 id="nosotros" className="scroll-mt-20 font-heading font-bold text-3xl text-foreground mb-6">El equipo</h1>
       <div>
         <ImageWithDescription
           imageUrl={pablo}

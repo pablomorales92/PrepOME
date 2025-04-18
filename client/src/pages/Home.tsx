@@ -45,8 +45,8 @@ const Home: React.FC = () => {
               </div>
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Local</h3>
-                <p className="text-muted-foreground">Primera fase de la olimpiada en tu centro educativo.</p>
-                <HashLink to="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
+                <p className="text-muted-foreground">Primera fase de la olimpiada.</p>
+                <HashLink to="/calendario#local" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
               </div>
             </div>
             
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Autonómica</h3>
                 <p className="text-muted-foreground">Clasificados compiten a nivel de comunidad autónoma.</p>
-                <HashLink to="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
+                <HashLink to="/calendario#autonomico" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
               </div>
             </div>
             
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <h3 className="font-heading font-semibold text-xl mb-2">Fase Nacional</h3>
                 <p className="text-muted-foreground">Final nacional con los mejores clasificados del país.</p>
-                <HashLink to="/calendario" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
+                <HashLink to="/calendario#nacional" className="inline-block mt-2 text-primary font-semibold text-sm hover:underline">Más información</HashLink>
               </div>
             </div>
           </div>
