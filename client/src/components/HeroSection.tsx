@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
           <Button 
             className="bg-[#f57c00] hover:bg-[#ffad42] text-white font-bold py-3 px-6 rounded-lg shadow-lg"
           >
-            Inscríbete ahora
+            Mantente informado
           </Button>
         </a>
       </div>
